@@ -1,0 +1,177 @@
+════════════════════════════════════════════════════════
+   FASHION STORE - HOW TO RUN
+════════════════════════════════════════════════════════
+
+📋 REQUIREMENTS:
+   • Node.js installed (v16 or higher)
+   • Internet connection (for MongoDB Atlas)
+
+════════════════════════════════════════════════════════
+
+🚀 OPTION 1: QUICK START (RECOMMENDED)
+════════════════════════════════════════════════════════
+
+1. Open PowerShell in project folder
+2. Run this command:
+
+   .\start.ps1
+
+3. Done! Both servers will start automatically:
+   • Backend: http://localhost:3001
+   • Frontend: http://localhost:3000
+
+════════════════════════════════════════════════════════
+
+🔧 OPTION 2: MANUAL START
+════════════════════════════════════════════════════════
+
+STEP 1: Start Backend
+---------------------
+Open Terminal 1 and run:
+
+   cd backend
+   npm install
+   npm start
+
+✓ Backend will run on http://localhost:3001
+
+
+STEP 2: Start Frontend
+----------------------
+Open Terminal 2 and run:
+
+   cd frontend
+   npm install
+   npm run dev
+
+✓ Frontend will run on http://localhost:3000
+
+════════════════════════════════════════════════════════
+
+🌐 ACCESS THE APPLICATION
+════════════════════════════════════════════════════════
+
+Main Shop:
+   http://localhost:3000
+
+Admin Panel:
+   http://localhost:3000/admin
+   (No password needed - direct access)
+
+════════════════════════════════════════════════════════
+
+📝 ADMIN PANEL FEATURES
+════════════════════════════════════════════════════════
+
+• View all orders
+• Add/Delete products
+• Add/Delete categories
+• Upload product images
+
+════════════════════════════════════════════════════════
+
+🛑 HOW TO STOP
+════════════════════════════════════════════════════════
+
+If using start.ps1:
+   • Press Enter in the script window
+
+If running manually:
+   • Press Ctrl+C in each terminal window
+
+════════════════════════════════════════════════════════
+
+⚠️ TROUBLESHOOTING
+════════════════════════════════════════════════════════
+
+Problem: "Port already in use"
+Solution: Stop all Node processes:
+   Get-Process node | Stop-Process -Force
+
+Problem: "Cannot connect to database"
+Solution: Check internet connection (MongoDB Atlas needs internet)
+
+Problem: Backend not starting
+Solution:
+   cd backend
+   Remove-Item -Recurse node_modules
+   npm install
+   npm start
+
+Problem: Frontend not starting
+Solution:
+   cd frontend
+   Remove-Item -Recurse node_modules
+   npm install
+   npm run dev
+
+════════════════════════════════════════════════════════
+
+📂 PROJECT STRUCTURE
+════════════════════════════════════════════════════════
+
+backend/
+   ├── server.js         (Express server)
+   ├── seed.js          (Add sample data)
+   ├── .env             (Configuration)
+   └── uploads/         (Product images)
+
+frontend/
+   ├── src/
+   │   ├── Shop.jsx     (Main shop page)
+   │   ├── Admin.jsx    (Admin panel)
+   │   ├── Cart.jsx     (Shopping cart)
+   │   └── api.js       (API calls)
+   └── public/          (Static files)
+
+════════════════════════════════════════════════════════
+
+🎯 QUICK COMMANDS REFERENCE
+════════════════════════════════════════════════════════
+
+Start everything:
+   .\start.ps1
+
+Stop all Node processes:
+   Get-Process node | Stop-Process -Force
+
+Add sample data:
+   cd backend
+   npm run seed
+
+Backend only:
+   cd backend
+   npm start
+
+Frontend only:
+   cd frontend
+   npm run dev
+
+════════════════════════════════════════════════════════
+
+✅ FIRST TIME SETUP
+════════════════════════════════════════════════════════
+
+1. Run .\start.ps1 (it will auto-install dependencies)
+2. Go to http://localhost:3000/admin
+3. Add categories (with images)
+4. Add products (with images)
+5. Go to http://localhost:3000 to see your shop
+6. Start shopping!
+
+════════════════════════════════════════════════════════
+
+💡 TIPS
+════════════════════════════════════════════════════════
+
+• Always start backend BEFORE frontend
+• Use admin panel to add products before shopping
+• Images are stored in backend/uploads/
+• Database is on MongoDB Atlas (cloud)
+• No login needed for admin panel
+• Cart data is stored in browser (localStorage)
+
+════════════════════════════════════════════════════════
+
+🎉 ENJOY YOUR FASHION STORE!
+════════════════════════════════════════════════════════
